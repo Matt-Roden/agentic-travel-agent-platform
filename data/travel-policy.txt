@@ -1,0 +1,143 @@
+================================================================================
+DOCUMENT ID: ADI-CORP-TRAVEL-POLICY-2026-COMPLETE
+OWNER: Global Operations & Finance Bureau
+STATUS: ACTIVE / VERIFIED
+================================================================================
+
+### PART I: THE CORE POLICY [REF: ADI-2026-CP]
+
+#### SECTION 1: GOVERNANCE AND ELIGIBILITY [REF: 100.00]
+101.01: Policy Objective
+The objective of the Aether Dynamics International (ADI) Corporate Travel Policy is to establish standardized procedures for all business-related travel. This document ensures fiduciary responsibility, traveler safety, and equitable treatment of all personnel regardless of rank or department.
+
+101.02: Scope of Application
+This policy is binding for all "Covered Persons," defined as full-time employees, part-time employees, temporary contractors, and third-party consultants representing ADI. Any deviation from these protocols without prior written authorization from the Global Travel Office (GTO) will result in a "Non-Compliant Expense" status and forfeiture of reimbursement.
+
+101.03: Definition of Business Travel
+Business travel is defined as any transit exceeding a 50-mile radius from the employee’s primary assigned work location (the "Base of Operations") for the purpose of conducting Company business.
+
+#### SECTION 2: PRE-TRIP AUTHORIZATION & BOOKING [REF: 200.00]
+201.01: The AetherConnect Portal Requirement
+All travel arrangements must be initiated through the AetherConnect Internal Portal. Manual bookings made through external consumer sites (e.g., Expedia, Kayak, Orbitz) are strictly prohibited and will not be reimbursed unless the AetherConnect system is documented as "Offline" via a verified IT ticket.
+
+201.02: Advanced Booking Windows
+- Domestic (Intra-continental): Minimum 14 calendar days in advance.
+- International (Inter-continental): Minimum 28 calendar days in advance.
+- Emergency Travel: Defined as travel required within 48 hours. Requires "Urgency Certification" signed by a Department Head (Level 4 or higher).
+
+201.03: Preferred Vendor Strategy
+ADI maintains exclusive "Tier 1" partnerships. Use of these vendors is mandatory to ensure corporate volume discounts:
+- Airlines: Global Horizon Air, Stratus Alliance, and Pacifica Aero.
+- Lodging: The Grand Meridian Group, NexaStays International, and Courtyard Suites.
+- Ground: Volt-Ride Electric Rentals and SilverCloud Livery.
+
+#### SECTION 3: AIR TRANSPORTATION PROTOCOLS [REF: 300.00]
+301.01: Class of Service by Flight Duration
+- Category A (Short Haul - <4 hours): Standard Economy only.
+- Category B (Medium Haul - 4 to 8 hours): Premium Economy or "Economy Plus." 
+- Category C (Long Haul - >8 hours): Business Class is permitted. 
+- Category D (Executive Tier): Only the Chief Executive Officer (CEO) and Board Members are authorized for First Class travel.
+
+301.02: Ancillary Airfare Expenses
+ADI will reimburse for:
+1. One (1) checked bag (standard weight).
+2. Seat selection fees for "Aisle" or "Window" preference (not to exceed $50 per leg).
+3. Change fees only if the change is requested by ADI Management.
+
+301.03: Loyalty Programs and Miles
+Employees may retain frequent flyer miles and loyalty points accrued during business travel. However, the choice of airline must be based on the lowest logical airfare (LLA) and policy compliance, not the accumulation of personal points.
+
+#### SECTION 4: LODGING AND ACCOMMODATIONS [REF: 400.00]
+401.01: Nightly Rate Caps (Standard vs. Premium)
+The maximum allowable "Room & Tax" rate is determined by the destination's "Market Complexity Index" (MCI):
+- Tier 3 (Standard Cities): $225.00 USD/night.
+- Tier 2 (Metropolitan Hubs): $375.00 USD/night.
+- Tier 1 (Hyper-Inflationary Markets - e.g., NYC, Zurich, Tokyo): $550.00 USD/night.
+
+401.02: Incidentals and Amenities
+The following are NOT reimbursable:
+- Mini-bar consumption (Alcohol or Snacks).
+- In-room movies or entertainment subscriptions.
+- Gym/Spa day-use fees.
+- Laundry services for trips lasting fewer than four (4) consecutive nights.
+
+#### SECTION 5: MEALS, PER DIEM, AND STIPENDS [REF: 500.00]
+501.01: Per Diem Allowance Model
+ADI utilizes a non-receipted per diem model for individual meals. This amount covers breakfast, lunch, dinner, and gratuities.
+- Standard Domestic Per Diem: $85.00 USD.
+- High-Cost Domestic Per Diem: $110.00 USD.
+- International Per Diem: Variable based on the State Department’s OCONUS rates + 10%.
+
+501.02: Pro-Rata Deductions for Provided Meals
+If a meal is provided by a conference, host, or vendor, the daily per diem must be reduced manually in the expense report:
+- Breakfast Provided: Subtract 25%.
+- Lunch Provided: Subtract 25%.
+- Dinner Provided: Subtract 50%.
+
+501.03: Business Entertainment Meals
+When an employee pays for a meal involving a client, the "Actual Expense" method is used instead of Per Diem. A detailed, itemized receipt is required. The "Total Cost Per Head" (including tax and tip) must not exceed $150.00 USD without prior Director-level approval.
+
+#### SECTION 6: GROUND TRANSPORTATION [REF: 600.00]
+601.01: Rental Car Category
+Rental cars must be booked in the "Intermediate" or "Standard" class. "Luxury," "Convertible," or "Extra-Large SUV" classes are prohibited unless transporting more than four (4) employees or heavy equipment.
+
+601.02: Personal Vehicle Usage (Mileage)
+Employees using personal vehicles for business travel are reimbursed at the 2026 ADI Standard Rate of $0.68 per mile. This rate covers fuel, wear-and-tear, and insurance. Fuel receipts for personal vehicles are not reimbursable.
+
+#### SECTION 7: MISCELLANEOUS AND NON-REIMBURSABLE [REF: 700.00]
+701.01: Forbidden Expenses (The "Blacklist")
+The following will be summarily rejected by the Finance Department:
+- Parking fines, speeding tickets, or towing fees.
+- Childcare, pet-sitting, or house-sitting costs.
+- Loss of personal property (theft or damage).
+- Tobacco, nicotine, or cannabis products (even where legal).
+- Clothing or luggage purchases.
+
+701.02: Duty of Care and Insurance
+All travelers are automatically covered under the ADI Global Guardian Insurance Policy. This includes emergency medical evacuation and 24/7 travel assistance. Travelers must check-in via the "Safe-Travel" mobile app upon arrival at their destination.
+
+#### SECTION 8: REIMBURSEMENT WORKFLOW [REF: 800.00]
+801.01: Submission Deadlines
+Expense reports must be submitted via AetherFinance within thirty (30) days of the conclusion of the trip. Reports submitted after sixty (60) days require a "Late Submission Waiver" from the CFO.
+
+801.02: Receipt Requirements
+Itemized receipts are mandatory for all individual expenses exceeding $25.00 USD. Credit card statements/summaries are not acceptable substitutes for itemized merchant receipts.
+
+---
+
+### PART II: RAG SEARCH ENHANCEMENT (FAQ METADATA) [REF: ADI-FAQ-001]
+
+Q: Can I fly Business Class for a 5-hour flight?
+A: No. Per Section 301.01, flights between 4 and 8 hours (Category B) are restricted to Premium Economy. Business Class is only permitted for flights exceeding 8 hours (Category C).
+
+Q: What is the maximum I can spend on a hotel in New York City?
+A: New York City is classified as a Tier 1 Hyper-Inflationary Market. The nightly rate cap is $550.00 USD (Ref: 401.01).
+
+Q: Am I reimbursed for gas if I drive my own car?
+A: No. You are reimbursed via a flat mileage rate of $0.68 per mile, which covers fuel and maintenance. Do not submit gas receipts for personal vehicles (Ref: 601.02).
+
+Q: Does ADI pay for my dog's kennel fees while I am away?
+A: No. Pet-sitting and boarding costs are explicitly listed as "Forbidden Expenses" (Ref: 701.01).
+
+Q: What happens if I lose my receipt for a $50 dinner?
+A: Since the expense exceeds $25.00 USD, an itemized receipt is mandatory. Without it, the expense will likely be rejected per Section 801.02.
+
+Q: How do I calculate per diem if the conference provides lunch?
+A: You must subtract 25% from your daily per diem allowance for that day (Ref: 501.02).
+
+---
+
+### PART III: GLOSSARY OF TERMS [REF: ADI-GLOSSARY]
+
+- ADI: Aether Dynamics International.
+- AetherConnect: The proprietary internal booking and travel management portal.
+- Base of Operations: The employee's primary office or home-office location.
+- Category A/B/C: Classifications of flight duration used to determine allowable cabin class.
+- GTO: Global Travel Office; the governing body for all ADI travel approvals.
+- LLA (Lowest Logical Airfare): The most cost-effective flight option that fits within reasonable business hours.
+- MCI (Market Complexity Index): The rating system used to set hotel nightly rate caps.
+- OCONUS: Outside Continental United States (used for international per diem rates).
+
+================================================================================
+END OF DOCUMENT
+================================================================================
