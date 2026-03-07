@@ -40,7 +40,7 @@ GOOGLE_GENERATIVE_AI_API_KEY=your_google_api_key_here
 TAVILY_API_KEY=your_tavily_api_key_here
 ```
 
-### 4. Run the application
+### 4. Start the server
 
 ```bash
 npm start
@@ -52,7 +52,25 @@ Or run in watch mode (auto-restarts on file changes):
 npm run dev
 ```
 
-The agent will process the prompt defined in `src/index.ts` and print its response to the console.
+The server will start at `http://localhost:3000` (override with the `PORT` env var).
+
+### 5. Send a question
+
+Send a POST request to the `/ask` endpoint with a JSON body:
+
+```bash
+curl -X POST http://localhost:3000/ask \
+  -H "Content-Type: application/json" \
+  -d '{"question": "I'\''m traveling to Miami (Lat: 25.8, Lon: -80.2) next week for 3 days. What is the maximum allowed lodging rate for the current season?"}'
+```
+
+The response will be a JSON object with the agent's answer:
+
+```json
+{
+  "answer": "Based on the corporate travel policy, the maximum lodging rate for Miami is..."
+}
+```
 
 ## Project Structure
 
@@ -61,7 +79,7 @@ travel-agent-platform/
 ├── data/
 │   └── travel-policy.txt          # Corporate travel policy document
 ├── src/
-│   ├── index.ts                   # Entry point — runs the agent
+│   ├── index.ts                   # Entry point — Express server with POST /ask
 │   ├── agents/
 │   │   └── travelAgent.ts         # Weather data fetching logic
 │   ├── prompts/
@@ -79,23 +97,51 @@ travel-agent-platform/
 └── tsconfig.json
 ```
 
+## API
+
+### `POST /ask`
+
+Send a travel-related question and receive the agent's answer.
+
+**Request body:**
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `question` | string | yes | The travel question to ask the agent |
+
+**Response (200):**
+
+```json
+{ "answer": "The agent's synthesized response..." }
+```
+
+If the model returned no text but did call tools, the response includes a `toolTrace` array instead.
+
+**Error responses:**
+
+| Status | Reason |
+|---|---|
+| 400 | Missing or invalid `question` field |
+| 500 | Internal error during agent processing |
+
 ## How It Works
 
-1. The entry point (`src/index.ts`) sends a user prompt to Google Gemini via the Vercel AI SDK.
-2. The model is given three tools it can call autonomously: **getWeather**, **getPolicy**, and **getShoppingItems**.
-3. The agent decides which tools to invoke based on the user's question, calls them in sequence, and synthesizes a final answer.
-4. The response — including policy details, weather conditions (converted to °F / mph), and shopping links — is printed to the console.
+1. A POST request hits `/ask` with the user's question.
+2. The question is forwarded to Google Gemini via the Vercel AI SDK along with three tools: **getWeather**, **getPolicy**, and **getShoppingItems**.
+3. The agent autonomously decides which tools to invoke, calls them, and synthesizes a final answer.
+4. The response — including policy details, weather conditions (converted to °F / mph), and shopping links — is returned as JSON.
 
 ## Customization
 
-- **Change the user prompt** — Edit the hardcoded prompt string in `src/index.ts` to ask different travel questions.
 - **Update the travel policy** — Replace or edit `data/travel-policy.txt` with your own company's policy document.
 - **Swap the model** — The model is configured in `src/index.ts`; change it to any model supported by the Vercel AI SDK.
+- **Change the port** — Set the `PORT` environment variable (defaults to `3000`).
 
 ## Tech Stack
 
 | Technology | Purpose |
 |---|---|
+| [Express](https://expressjs.com/) | HTTP server and routing |
 | [Vercel AI SDK](https://sdk.vercel.ai/docs) | Agent orchestration and tool calling |
 | [Google Gemini](https://ai.google.dev/) | LLM powering the agent |
 | [Tavily](https://tavily.com/) | Web search API for shopping results |
