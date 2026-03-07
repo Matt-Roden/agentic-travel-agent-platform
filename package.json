@@ -15,6 +15,7 @@
   "dependencies": {
     "@ai-sdk/google": "^3.0.43",
     "@ai-sdk/openai": "^3.0.41",
+    "@tavily/core": "^0.7.2",
     "ai": "^6.0.116",
     "dotenv": "^17.3.1",
     "zod": "^4.3.6"
