@@ -117,6 +117,13 @@ Send a travel-related question and receive the agent's answer.
 
 If the model returned no text but did call tools, the response includes a `toolTrace` array instead.
 
+Example of full response:
+```json
+{
+    "answer": "For your upcoming 4-day trip to Denver, please note that the company policy does not provide a stipend for clothing or luggage purchases.\n\nThe weather in Denver is currently cold, with a temperature of approximately 29.12°F and a wind speed of about 4.91 mph. Given the cold weather, I recommend packing warm winter clothing, especially since you will be attending meetings, lunches with customers, and potentially golfing.\n\nHere are some options for winter clothing:\n*   **LLBean Winter Clothes For Women**: [https://www.llbean.com/buy/winter-clothes-for-women](https://www.llbean.com/buy/winter-clothes-for-women)\n*   **Ann Taylor Women's Winter Clothing**: [https://www.anntaylor.com/l/womens-winter-clothing-0aez08a?srsltid=AfmBOopOBxTzO08vymzOL5XUzxYIOEDyOKWXOqh8erkYPwLOCk4nRLHr](https://www.anntaylor.com/l/womens-winter-clothing-0aezO08vymzOL5XUzxYIOEDyOKWXOqh8erkPpwLOCk4nRLHr)\n*   **REI Co-op Winter Clothing**: [https://www.rei.com/h/winter-clothing](https://www.rei.com/h/winter-clothing)"
+}
+```
+
 **Error responses:**
 
 | Status | Reason |
