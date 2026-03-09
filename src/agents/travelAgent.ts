@@ -1,25 +1,29 @@
-export interface WeatherData {
-  temperature: number;
-  windspeed: number;
-  conditionCode: number;
-  city: string;
-}
+import { generateText, stepCountIs } from "ai";
+import { google } from "@ai-sdk/google";
+import { tools } from "../tools/index.js";
+import { TRAVEL_AGENT_PROMPT } from "../prompts/travelAgentPrompt.js";
 
-export const fetchWeatherData = async (lat: number, lon: number, city: string): Promise<WeatherData> => {
-  const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`;
+const model = google("gemini-2.5-flash");
 
-  const response = await fetch(url);
+export async function runTravelAgent(question: string) {
+  const result = await generateText({
+    model,
+    system: TRAVEL_AGENT_PROMPT,
+    tools,
+    stopWhen: stepCountIs(10),
+    prompt: question,
+  });
 
-  if (!response.ok) {
-    throw new Error(`Failed to fetch weather data- API responded with status: ${response.status} - Response: ${response}`);
+  if (result.text) {
+    return { answer: result.text };
   }
 
-  const data = await response.json();
-
-  return {
-    temperature: data.current_weather.temperature,
-    windspeed: data.current_weather.windspeed,
-    conditionCode: data.current_weather.conditionCode,
-    city: city,
-  };
+  const toolTrace = result.steps.flatMap((step, i) =>
+    step.toolResults.map((r) => ({
+      step: i + 1,
+      tool: r.toolName,
+      output: r.output,
+    }))
+  );
+  return { answer: null, toolTrace };
 }

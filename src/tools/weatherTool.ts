@@ -1,6 +1,6 @@
 import { tool } from "ai";
 import { z } from "zod";
-import { fetchWeatherData } from "../agents/travelAgent.js";
+import { fetchWeatherData } from "../clients/openMeteoClient.js";
 
 export const weatherTool = tool({
   description:

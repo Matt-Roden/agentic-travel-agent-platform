@@ -77,22 +77,31 @@ The response will be a JSON object with the agent's answer:
 ```
 travel-agent-platform/
 ├── data/
-│   └── travel-policy.txt          # Corporate travel policy document
+│   └── travel-policy.txt            # Corporate travel policy document
 ├── src/
-│   ├── index.ts                   # Entry point — Express server with POST /ask
+│   ├── index.ts                     # Bootstrap — starts the server
+│   ├── app.ts                       # Express app setup (middleware, routes)
 │   ├── agents/
-│   │   └── travelAgent.ts         # Weather data fetching logic
+│   │   └── travelAgent.ts           # Agent orchestration (generateText)
+│   ├── clients/                     # All external HTTP / API calls
+│   │   ├── openMeteoClient.ts       # Open-Meteo weather API
+│   │   └── tavilyClient.ts          # Tavily search API
+│   ├── config/
+│   │   └── env.ts                   # Validated environment variables
 │   ├── prompts/
-│   │   └── main_agent_prompt.ts   # System prompt for the AI agent
+│   │   └── travelAgentPrompt.ts     # System prompt for the AI agent
+│   ├── routes/
+│   │   └── askRoutes.ts             # POST /ask route handler
 │   ├── services/
-│   │   ├── policyService.ts       # Reads the travel policy file
-│   │   └── shoppingService.ts     # Tavily search integration
-│   └── tools/
-│       ├── index.ts               # Tool exports
-│       ├── weatherTool.ts         # Weather lookup tool
-│       ├── policyReaderTool.ts    # Policy Q&A tool
-│       └── shoppingTool.ts        # Shopping search tool
-├── .env                           # API keys (not committed)
+│   │   └── policyService.ts         # Reads the local travel policy file
+│   ├── tools/
+│   │   ├── index.ts                 # Tool registry (exports all tools)
+│   │   ├── weatherTool.ts           # Weather lookup tool
+│   │   ├── policyReaderTool.ts      # Policy Q&A tool
+│   │   └── shoppingTool.ts          # Shopping search tool
+│   └── types/
+│       └── weather.ts               # Shared TypeScript interfaces
+├── .env                             # API keys (not committed)
 ├── package.json
 └── tsconfig.json
 ```
@@ -141,7 +150,7 @@ Example of full response:
 ## Customization
 
 - **Update the travel policy** — Replace or edit `data/travel-policy.txt` with your own company's policy document.
-- **Swap the model** — The model is configured in `src/index.ts`; change it to any model supported by the Vercel AI SDK.
+- **Swap the model** — The model is configured in `src/agents/travelAgent.ts`; change it to any model supported by the Vercel AI SDK.
 - **Change the port** — Set the `PORT` environment variable (defaults to `3000`).
 
 ## Tech Stack

@@ -1,6 +1,6 @@
 import { tool } from "ai";
 import { z } from "zod";
-import { searchShoppingItems } from "../services/shoppingService.js";
+import { searchShoppingItems } from "../clients/tavilyClient.js";
 
 export const shoppingTool = tool({
   description: "Search for shopping items on amazon on the internet based on the information fed to the tool. IF the weather is cold, search for winter clothing. IF the weather is hot, search for summer clothing. IF the weather is mild, search for spring/summer clothing.",
@@ -14,4 +14,4 @@ export const shoppingTool = tool({
       response: response,
     };
   },
-})
+});
