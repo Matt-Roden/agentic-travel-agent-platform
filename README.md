@@ -170,6 +170,22 @@ Your code influences tool selection through three levers:
 - **Tool descriptions** — the `description` field tells the model *when* a tool is relevant.
 - **The system prompt** — instructions like "ALWAYS check the getPolicy tool" enforce behavior beyond what the model would do on its own.
 
+## Testing
+
+The project uses [Vitest](https://vitest.dev/) for unit tests. All external dependencies (fetch, Tavily, filesystem, Gemini) are mocked so tests run fast and offline with no API keys required.
+
+```bash
+npm test
+```
+
+| Test file | What it covers |
+|---|---|
+| `src/config/env.test.ts` | Env var validation — throws on missing keys, defaults port |
+| `src/clients/openMeteoClient.test.ts` | Weather client — parses responses, builds URLs, handles errors |
+| `src/clients/tavilyClient.test.ts` | Tavily client — returns results, passes correct options |
+| `src/services/policyService.test.ts` | Policy reader — returns file contents, handles missing files |
+| `src/routes/askRoutes.test.ts` | Route handler — 400/200/500 responses for various inputs |
+
 ## Customization
 
 - **Update the travel policy** — Replace or edit `data/travel-policy.txt` with your own company's policy document.
@@ -187,3 +203,4 @@ Your code influences tool selection through three levers:
 | [Open-Meteo](https://open-meteo.com/) | Free weather API |
 | [Zod](https://zod.dev/) | Tool input schema validation |
 | [tsx](https://github.com/privatenumber/tsx) | TypeScript execution without a build step |
+| [Vitest](https://vitest.dev/) | Unit testing framework |
