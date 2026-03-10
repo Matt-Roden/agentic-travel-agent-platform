@@ -147,6 +147,29 @@ Example of full response:
 3. The agent autonomously decides which tools to invoke, calls them, and synthesizes a final answer.
 4. The response — including policy details, weather conditions (converted to °F / mph), and shopping links — is returned as JSON.
 
+### How the agent picks its tools
+
+There is no hard-coded routing logic that selects a tool — **the LLM decides**. When `generateText` is called, the Vercel AI SDK sends Gemini three things:
+
+- **The system prompt** (`travelAgentPrompt.ts`) — natural-language instructions describing the agent's role and behavior.
+- **The tool definitions** — each tool's name (the keys in `tools/index.ts`, e.g. `getWeather`), its `description` string, and its `inputSchema`. The SDK serializes these into [function declarations](https://ai.google.dev/gemini-api/docs/function-calling) that Gemini understands.
+- **The user's question** — the free-text prompt from the POST body.
+
+Gemini reads all of this and reasons about which tools to call and in what order. For example, if the user asks *"What should I pack for Denver?"*, the model recognizes it needs weather data, checks the policy, then uses those results to search for shopping items.
+
+The SDK then runs an **agentic loop**:
+
+1. Gemini responds with a tool call (e.g. `getWeather` with `{ lat: 39.8, lon: -104.9, city: "Denver" }`)
+2. The SDK executes the matching `execute` function and sends the result back to Gemini
+3. Gemini decides what to do next — call another tool or produce a final text answer
+4. This repeats until Gemini returns text or the `stepCountIs(10)` safety limit is reached
+
+Your code influences tool selection through three levers:
+
+- **Tool names** — clear names like `getWeather` vs `getPolicy` help the model distinguish tools at a glance.
+- **Tool descriptions** — the `description` field tells the model *when* a tool is relevant.
+- **The system prompt** — instructions like "ALWAYS check the getPolicy tool" enforce behavior beyond what the model would do on its own.
+
 ## Customization
 
 - **Update the travel policy** — Replace or edit `data/travel-policy.txt` with your own company's policy document.
